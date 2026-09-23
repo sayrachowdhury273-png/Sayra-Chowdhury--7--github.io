@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayra Chowdhury - Portfolio CV</title>
+    <link href="https://cdnjs.cloudflare.com/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .cv-container {
+            width: 850px;
+            background: #ffffff;
+            display: flex;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        /* Top Right Floral Decoration */
+        .floral-decoration {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 120px;
+            height: 120px;
+            pointer-events: none;
+            opacity: 0.85;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            width: 32%;
+            background-color: #0f2b48;
+            color: #ffffff;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .profile-pic-container {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto;
+            border-radius: 50%;
+            border: 4px solid #e91e63;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-pic-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar-section-title {
+            background-color: #e91e63;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-text {
+            font-size: 12px;
+            line-height: 1.4;
+            color: #d1d8e0;
+        }
+
+        .sidebar-list {
+            list-style: none;
+        }
+
+        .sidebar-list li {
+            font-size: 12.5px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-list li i {
+            color: #e91e63;
+            font-size: 12px;
+        }
+
+        /* Right Main Content */
+        .main-content {
+            width: 68%;
+            padding: 30px;
+            background-color: #ffffff;
+        }
+
+        .header {
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            color: #0f2b48;
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .header h2 {
+            color: #e91e63;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        .main-section-title {
+            background: linear-gradient(90deg, #0f2b48 0%, #1f4068 100%);
+            color: #ffffff;
+            padding: 7px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 12px;
+            font-size: 12.5px;
+            color: #333333;
+        }
+
+        .info-item {
+            line-height: 1.4;
+        }
+
+        .info-item span {
+            font-weight: bold;
+            color: #0f2b48;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .timeline-item {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 2px solid #e91e63;
+        }
+
+        .timeline-item h3 {
+            font-size: 13px;
+            color: #0f2b48;
+            font-weight: bold;
+        }
+
+        .timeline-item h4 {
+            font-size: 11.5px;
+            color: #e91e63;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .timeline-item p, .timeline-item ul {
+            font-size: 11.5px;
+            color: #555555;
+            line-height: 1.4;
+        }
+
+        .timeline-item ul {
+            padding-left: 15px;
+            margin-top: 4px;
+        }
+
+        /* Video Showcase Box Style */
+        .video-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+        }
+
+        .video-box h4 {
+            font-size: 12.5px;
+            color: #0f2b48;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .video-box h4 i {
+            color: #e91e63;
+        }
+
+        .video-box p {
+            font-size: 11.5px;
+            color: #555555;
+            margin-top: 3px;
+            line-height: 1.3;
+        }
+
+        .reference-box {
+            background-color: #f8f9fa;
+            border: 1px dashed #cccccc;
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 11.5px;
+            color: #666666;
+            font-style: italic;
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- Top Right Flower SVG Graphic -->
+        <svg class="floral-decoration" viewBox="0 0 100 100">
+            <circle cx="80" cy="20" r="15" fill="#e91e63" opacity="0.3" />
+            <circle cx="90" cy="35" r="10" fill="#0f2b48" opacity="0.2" />
+            <path d="M 60,10 C 70,30 80,10 95,25" stroke="#e91e63" stroke-width="2" fill="none" />
+            <circle cx="65" cy="12" r="3" fill="#e91e63" />
+            <circle cx="75" cy="22" r="4" fill="#0f2b48" />
+        </svg>
+
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="profile-pic-container">
+                <img src="photo.jpg" alt="Sayra Chowdhury">
+            </div>
+
+            <div>
+                <div class="sidebar-section-title"><i class="fa-solid fa-user-pen"></i> About Me</div>
+                <p class="sidebar-text">
+                    Passionate and dedicated language educator committed to creating interactive, inclusive, and student-centered learning environments in TESOL.
+                </p>
+            </div>
+
+            <div>
+                <div class="sidebar-section-title"><i class="fa-solid fa-address-book"></i> Contact</div>
+                <ul class="sidebar-list">
+                    <li><i class="fa-solid fa-phone"></i> 01778298001</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Shamsun Nahar Hall, University of Dhaka</li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="sidebar-section-title"><i class="fa-solid fa-gears"></i> Skills</div>
+                <ul class="sidebar-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Classroom Management</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Lesson Planning</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Student Assessment</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Communication Skills</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Time Management</li>
+                    <li><i class="fa-solid fa-check-circle"></i> MS Word</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Teamwork</li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="sidebar-section-title"><i class="fa-solid fa-language"></i> Languages</div>
+                <ul class="sidebar-list">
+                    <li><i class="fa-solid fa-circle-dot"></i> Bangla</li>
+                    <li><i class="fa-solid fa-circle-dot"></i> English</li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="sidebar-section-title"><i class="fa-solid fa-heart"></i> Hobbies</div>
+                <ul class="sidebar-list">
+                    <li><i class="fa-solid fa-chalkboard-user"></i> Teaching</li>
+                    <li><i class="fa-solid fa-palette"></i> Drawing</li>
+                    <li><i class="fa-solid fa-utensils"></i> Cooking</li>
+                    <li><i class="fa-solid fa-book-open"></i> Reading Book</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>SAYRA CHOWDHURY</h1>
+                <h2>TEACHER / EDUCATOR</h2>
+            </div>
+
+            <div class="main-section-title"><i class="fa-solid fa-user"></i> Personal Information</div>
+            <div class="info-grid">
+                <div class="info-item"><span>Name:</span> Sayra Chowdhury</div>
+                <div class="info-item"><span>Date of Birth:</span> 18.01.2001</div>
+                <div class="info-item"><span>Sex:</span> Female</div>
+                <div class="info-item"><span>Religion:</span> Islam</div>
+                <div class="info-item full-width"><span>Nationality:</span> Bangladeshi</div>
+                <div class="info-item full-width"><span>Present Address:</span> Shamsun Nahar Hall, University of Dhaka</div>
+                <div class="info-item full-width"><span>Permanent Address:</span> Nahar Monjil, 6, Forest Office Road, Moulvibazar</div>
+            </div>
+
+            <div class="main-section-title"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+            
+            <div class="timeline-item">
+                <h3>Master of Arts in TESOL</h3>
+                <h4>Institute of Education and Research (IER), University of Dhaka</h4>
+                <p>Status: Ongoing</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Bachelor of Education (B.Ed.) in Language Education</h3>
+                <h4>Institute of Education and Research (IER), University of Dhaka</h4>
+                <p>Passing Year: 2024 | CGPA: 3.15</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>H.S.C (Higher Secondary Certificate)</h3>
+                <h4>Moulvibazar Board</h4>
+                <p>Passing Year: 2020 | GPA: 5.00</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>S.S.C (Secondary School Certificate)</h3>
+                <h4>Moulvibazar Board</h4>
+                <p>Passing Year: 2018 | GPA: 5.00</p>
+            </div>
+
+            <div class="main-section-title"><i class="fa-solid fa-briefcase"></i> Work Experience</div>
+            <div class="timeline-item">
+                <h3>English Teacher / Educator</h3>
+                <h4>6 Months Experience</h4>
+                <ul>
+                    <li>Planned and delivered engaging language lessons.</li>
+                    <li>Assessed student progress and maintained academic records.</li>
+                    <li>Created a positive and disciplined learning environment.</li>
+                </ul>
+            </div>
+
+            <div class="main-section-title"><i class="fa-solid fa-video"></i> Interactive Educational Videos</div>
+            
+            <div class="video-box">
+                <h4><i class="fa-solid fa-circle-play"></i> English Grammar Made Easy: Story-based Lesson</h4>
+                <p>Created engaging animated video lessons explaining basic grammar rules through visual storytelling.</p>
+            </div>
+
+            <div class="video-box">
+                <h4><i class="fa-solid fa-circle-play"></i> Vocabulary Building &amp; Pronunciation Practice</h4>
+                <p>Developed interactive audio-visual guides to help young learners expand vocabulary with correct phonetics.</p>
+            </div>
+
+            <div class="video-box">
+                <h4><i class="fa-solid fa-circle-play"></i> Interactive Speaking &amp; Phonics Activity</h4>
+                <p>Designed activity-based educational videos to build students' speaking confidence in English.</p>
+            </div>
+
+            <div class="main-section-title"><i class="fa-solid fa-handshake-angle"></i> Volunteer Work</div>
+            <div class="timeline-item">
+                <h3>Debate Program Volunteer</h3>
+                <h4>Shamsun Nahar Hall Songsod, University of Dhaka</h4>
+                <ul>
+                    <li>Organised and managed debate competitions and events.</li>
+                </ul>
+            </div>
+
+            <div class="main-section-title"><i class="fa-solid fa-asterisk"></i> References</div>
+            <div class="reference-box">
+                "References will be provided upon request."
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
